@@ -21,6 +21,19 @@
   .hero .tagline { color: var(--gold-light); font-style: italic; font-size: clamp(13px, 2.5vw, 16px); }
   .hero p.intro { max-width: 640px; margin: 18px auto 0 auto; color: #dbe3ee; font-size: 15px; }
 
+  .dlhead { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 30px; align-items: start; margin-bottom: 26px; }
+  .dlhead .sub { margin-bottom: 0; }
+  .dlhead .grid { grid-template-columns: 1fr; }
+  .dlhead h3.group { margin-top: 18px; }
+  .zipall { margin-top: 16px; border-left-color: var(--navy); background: var(--cream); }
+  .pullquote { background: var(--cream); border: 1px solid #e6e1d3; border-left: 4px solid var(--gold); border-radius: 8px; padding: 18px 20px; }
+  .pullquote .mark { display: block; color: var(--gold); font-size: 30px; line-height: .5; font-family: Georgia, serif; margin-bottom: 8px; }
+  .pullquote p { font-size: 14.5px; line-height: 1.58; color: var(--navy); font-style: italic; }
+  .pullquote cite { display: block; margin-top: 12px; font-style: normal; font-size: 13px; color: var(--navy); font-weight: 700; }
+  .pullquote cite span { display: block; font-weight: 400; font-size: 12px; color: var(--gray); margin-top: 2px; }
+  .pullquote cite span + span { margin-top: 0; }
+  @media (max-width: 780px) { .dlhead { grid-template-columns: 1fr; gap: 20px; } }
+
   section { padding: 40px 0; }
   h2 { color: var(--navy); font-size: 24px; font-weight: 800; margin-bottom: 4px; }
   .sub { color: var(--gray); margin-bottom: 22px; }
@@ -83,20 +96,27 @@
   </div>
 </header>
 
+
 <section id="downloads">
   <div class="wrap">
-    <h2>Download the Materials</h2>
-    <div class="sub">Everything you need to run Digital Mensches with your community. Free to use; we ask only that you <a href="#feedback">share your feedback</a> afterward.</div>
-
-    <div class="grid" style="margin-bottom:6px;">
-      <a class="dl" href="files/Digital_Mensches_All_Materials.zip" style="border-left-color:var(--navy); background:var(--cream);"><span class="icon">📦</span><span><span class="t">Download Everything</span><br><span class="d">All thirteen documents in one zip</span></span></a>
+    <div class="dlhead">
+      <div>
+        <h2>Download the Materials</h2>
+        <div class="sub">Everything you need to run Digital Mensches with your community. Free to use; we ask only that you <a href="#feedback">share your feedback</a> afterward.</div>
+        <a class="dl zipall" href="files/Digital_Mensches_All_Materials.zip"><span class="icon">📦</span><span><span class="t">Download Everything</span><br><span class="d">All thirteen documents in one zip</span></span></a>
+        <h3 class="group">Core Documents</h3>
+        <div class="grid">
+          <a class="dl" target="_blank" rel="noopener" href="files/Ten_Commandments_of_Ethical_Online_Behavior_v8.pdf"><span class="icon">📜</span><span><span class="t">The Ten Commandments</span><br><span class="d">The full document with Jewish sources and research (v8)</span></span></a>
+          <a class="dl" target="_blank" rel="noopener" href="files/Study_Guide_Ten_Commandments_v8.pdf"><span class="icon">📖</span><span><span class="t">Study Guide &amp; Program Companion</span><br><span class="d">Objectives, choosing a program, facilitation tips (v8.1)</span></span></a>
+        </div>
+      </div>
+      <blockquote class="pullquote">
+        <span class="mark" aria-hidden="true">&ldquo;</span>
+        <p>The Digital Mensches lessons invite students of all ages to examine the role that Judaism plays in guiding choices they make as they interact with social media and AI. The lessons remind students that Judaism has something to contribute as many feel at a loss for deciphering how to interact with these new technologies.</p>
+        <cite>Rabbi Amy Cohen<span>Faculty &amp; Facilitator</span><span>URJ 6 Points Sci-Tech Academy</span></cite>
+      </blockquote>
     </div>
 
-    <h3 class="group">Core Documents</h3>
-    <div class="grid">
-      <a class="dl" target="_blank" rel="noopener" href="files/Ten_Commandments_of_Ethical_Online_Behavior_v8.pdf"><span class="icon">📜</span><span><span class="t">The Ten Commandments</span><br><span class="d">The full document with Jewish sources and research (v8)</span></span></a>
-      <a class="dl" target="_blank" rel="noopener" href="files/Study_Guide_Ten_Commandments_v8.pdf"><span class="icon">📖</span><span><span class="t">Study Guide &amp; Program Companion</span><br><span class="d">Objectives, choosing a program, facilitation tips (v8.1)</span></span></a>
-    </div>
 
     <h3 class="group">Program Guides — five ready-to-run sessions</h3>
     <div class="sub" style="margin-bottom:10px;"><b>Updated July 2026 from the summer pilots:</b> every guide now opens with what the session is actually for, says which segment to protect when time runs short, and treats group sizes as guidance rather than requirements, with adaptations for smaller and larger groups. Each guide is a complete session plan with 45, 60, and 90 minute timing. Running a single session with your group? Pick <b>I</b>, <b>II</b>, or <b>III</b> to fit your group size and room. Planning a series? Open with <b>IV. Personal Reflection</b> as the first session (or as staff preparation), run <b>I&ndash;III</b> in the middle, and close with <b>V. Feedback &amp; Revision Workshop</b>. The Study Guide above walks you through choosing.</div>
@@ -205,7 +225,7 @@
   A project of URJ 6 Points Sci-Tech Academy • Guided by Rabbi Dan Medwin<br>
   Supported by Sinai and Synapses, CLAL, and The Templeton Foundation<br>
   This site and its materials were created in partnership with Claude, an AI assistant &mdash; modeling the transparent, human-guided AI use these commandments advocate.<br>
-  <span class="v">techrabbi.org/digital-mensches • v1.8</span>
+  <span class="v">techrabbi.org/digital-mensches • v1.9</span>
 </footer>
 
 <script type="module">
@@ -280,7 +300,7 @@ async function submitFeedback(fields, files) {
     role,
     uploadId: files && files.length ? uploadId : null,
     files: names,
-    page: "techrabbi.org/digital-mensches v1.8",
+    page: "techrabbi.org/digital-mensches v1.9",
     createdAt: serverTimestamp(),
   });
 }
